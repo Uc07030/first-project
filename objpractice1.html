@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head><title>practice exercise</title></head>
+  <body>
+    <h1>js ELEMENT CREATION</h1>
+<script>
+    
+  const quiz_Questions={
+    
+    question1:{
+       qust1:"Question(1):\n  html stands for ?",
+    Option2:"(A):\n hyper text make up language",
+    Option3:"(B):\n hyper",
+    Option3:"(C):\n all of the above",
+    answer:"C"
+  },
+  question2:{
+    qust1:"Question(1):\n  lisp stands for ?",
+    Option2:"(A):\n hyper text make up language",
+    Option3:"(B):\n language instruction",
+    Option3:"(C):\n all of the above",
+    answer:"B"
+  },
+  question3:{
+    qust2:"Question(1):\n basic stands for ?",
+    Option2:"(A):\n hyper text make up language",
+    Option3:"(B):\n hyper",
+    Option3:"(C):\n begginers all purpose symbolic instruction code",
+    answer:"A"
+  },
+  question4:{
+    qust3:"Question(1):\n  url stands for ?",
+    Option2:"(A):\n uniform resource locator",
+    Option3:"(B):\n hyper",
+    Option3:"(C):\n all of the above",
+    answer:"A"
+  },
+  question5:{
+    qust4:"Question(1):\n  html stands for ?",
+    Option2:"(A):\n hyper text make up language",
+    Option3:"(B):\n hyper",
+    Option3:"(C):\n all of the above",
+    answer:"A"
+  },
+  question6:{
+    qust6:"Question(1):\n  fortran  stands for ?",
+    Option2:"(A):\n hyper text make up language",
+    Option3:"(B):\n formula translator",
+    Option3:"(C):\n all of the above",
+    answer:"B"
+  },
+  question7:{
+    qust7:"Question(1):\n  Css stands for ?",
+    Option2:"(A):\n hyper text make up language",
+    Option3:"(B):\n cascading style sheet",
+    Option3:"(C):\n all of the above",
+    answer:"B"
+  },
+  question8:{
+    qust8:"Question(1):\n  js stands for ?",
+    Option2:"(A):\n hyper text make up language",
+    Option3:"(B):\n hyper",
+    Option3:"(C):\n java script",
+    answer:"C"
+  }
+     
+     
+     
+     
+  };
+  for(let i in quiz_Questions){
+    const qustions=quiz_Questions[i];
+    const ptext=document.createElement('p');
+    for(let j in qustions){
+        const texnode=document.createTextNode(qustions[j]);
+        ptext.appendChild(texnode);
+        document.body.appendChild(ptext)
+
+    }
+    
+  }
+  
+
+
+    
+</script>
+  </body>  
+
+</html>

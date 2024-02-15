@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>CSC 309</title>
+
+</head>
+
+<body>
+
+<h1 id=”student”></h1>
+
+<h3 id=”reg_no”></h3>
+
+<table id=”results” border=”1” width=”50%”>
+
+<tr>
+
+<td>SN</td>
+
+<td>Course Code</td>
+
+<td>Course Title</td>
+
+<td>Course Work</td>
+
+<td>Mid Semester</td>
+
+<td>Exam</td>
+
+<td>Total</td>
+
+<td>Grade</td>
+
+</tr>
+
+</table>
+
+<script type=”text/JavaScript”>
+
+        // Step 1: Set content of h1 tag to your full name
+
+ConstfullName = “Your Full Name”;
+
+Const h1Element = document.getElementById(“student”);
+
+        H1Element.textContent = fullName;
+
+// Step 2: Set content of h3 tag to your matriculation number
+
+ConstmatricNumber = “Your Matriculation Number”;
+
+Const h3Element = document.getElementById(“reg_no”);
+
+        H3Element.textContent = matricNumber;
+
+// Step 3: Replace and update the results object with your first semester 2021/2022 result details
+
+Const results = {
+
+            ‘csc101’: {
+
+                ‘sn’: 1,
+
+                ‘code’: ‘CSC 101’,
+
+                ‘title’: ‘Introduction to Computer Science’,
+
+                ‘inc’: 10,
+
+                ‘mid’: 12,
+
+                ‘exam’: 50
+
+            },
+
+‘csc102’: {
+
+                ‘sn’: 2,
+
+                ‘code’: ‘CSC 102’,
+
+                ‘title’: ‘Introduction to Problem Solving’,
+
+                ‘inc’: 11,
+
+                ‘mid’: 15,
+
+                ‘exam’: 40
+
+            }
+
+};
+
+
+
+        // Step 4: Write a JS Function that accepts a score parameter and returns the Grade using the FUNAI grading standard
+
+        Function calculateGrade(score) {
+
+            // Implement your grading logic here and return the grade
+
+            // Example grading logic:
+
+            If (score >= 70) {
+
+                Return ‘A’;
+
+            } else if (score >= 60) {
+
+                Return ‘B’;
+
+            } else if (score >= 50) {
+
+                Return ‘C’;
+
+            } else if (score >= 45) {
+
+                Return ‘D’;
+
+            } else if (score >= 40) {
+
+                Return ‘E’;
+
+            } else {
+
+                Return ‘F’;
+
+            }
+
+        }
+
+// Step 5: Iterate over the courses and compute the total score, update the table, and display the grade
+
+Const table = document.getElementById(‘results’);
+
+        For (let key in results) {
+
+Const course = results[key];
+
+Consttr = document.createElement(‘tr’);
+
+
+
+            // Compute the total score and add it to the table
+
+ConsttotalScore = course.inc + course.mid + course.exam;
+
+Course.total = totalScore;
+
+
+
+            For (let item in course) {
+
+Const td = document.createElement(‘td’);
+
+Const txt = document.createTextNode(course[item]);
+
+Td.appendChild(txt);
+
+Tr.appendChild(td);
+
+            }
+
+// Calculate and display the grade
+
+Const grade = calculateGrade(totalScore);
+
+ConsttdGrade = document.createElement(‘td’);
+
+ConsttxtGrade = document.createTextNode(grade);
+
+tdGrade.appendChild(txtGrade);
+
+tr.appendChild(tdGrade);
+
+
+
+table.appendChild(tr);
+
+        }
+
+</script>
+
+</body>
+<html>
+
+

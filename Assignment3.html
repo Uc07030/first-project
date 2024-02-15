@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSC 309</title>
+    </head>
+    <body>
+        <h1 id="student"></h1>
+
+        <h3 id="reg_no"></h3>
+
+        <table id="results" border="1" width="50%">
+            <tr>
+                <td>SN</td>
+                <td>Course Code</td>
+                <td>Course Title</td>
+                <td>Course Work</td>
+                <td>Mid Semester</td>
+                <td>Exam</td>
+                <td>Total</td>
+                <td>Grade</td>
+            </tr>
+        </table>
+
+        <script type="text/JavaScript">
+             document.getElementById('student').innerHTML="UCHE INNOCENT EMMANUEL;"
+           const matricNo=document.getElementById('reg_no');
+            matricNo.innerText="2020/SC/12673";
+            const results = {
+
+                'Mth215': {
+                    'sn': 1,
+                    'code': 'MTH 215',
+                    'title': 'MATHEMATICAL METHOD 1',
+                    'inc': 8,
+                    'mid': 12,
+                    'exam': 60
+                },
+
+                'Gst 201': {
+                    'sn': 2,
+                    'code': 'GST 201',
+                    'title': 'COMMUNICATION IN FRENCH',
+                    'inc': 12,
+                    'mid': 10,
+                    'exam': 60
+                },
+                 
+                'MTH 211': {
+                    'sn':3,
+                    'code': 'MTH 211',
+                    'title': 'LINEAR ALGEBRA',
+                    'inc': 10,
+                    'mid': 14,
+                    'exam': 63
+                },
+                
+                'ENT 201': {
+                    'sn': 4,
+                    'code': 'ENT 201',
+                    'title': 'INTRODUCTION TO ENTREPRENEURIALSHIP',
+                    'inc': 9,
+                    'mid': 13,
+                    'exam': 31
+                },
+                'MTH213': {
+                    'sn': 5,
+                    'code': 'CSC 102',
+                    'title': 'FUNDERMENTALS OF MORDEN ALGELBRAL',
+                    'inc': 4,
+                    'mid': 11,
+                    'exam': 57,
+                },
+                
+                'GST 105': {
+                    'sn': 6,
+                    'code': 'GST 105',
+                    'title': 'NIGERIAN PEOPLES AND CULTURE',
+                    'inc': 7,
+                    'mid': 7,
+                    'exam': 32
+                },
+
+                'CSC 201': {
+                    'sn': 7,
+                    'code': 'CSC 201',
+                    'title': 'COMPUTER PROGRAMMING 1',
+                    'inc': 13 ,
+                    'mid': 11,
+                    'exam': 55
+                },
+
+                'CSC 205': {
+                    'sn':8 ,
+                    'code': 'CSC 205',
+                    'title': 'OPERATING SYSTEM 1',
+                    'inc': 9,
+                    'mid': 11,
+                    'exam': 43
+                }
+            };
+
+            
+           
+            function calculateGrade(score) {
+                if (score>=70) {
+                    return "A"
+                    
+                }
+                else if (score>=70) {
+                    return "A";
+                }
+                else if (score>=60) {
+                    return "B";
+                    
+                } 
+                else if (score>=50) {
+                    return "C";
+                    
+                } 
+                else if (score>=45) {
+                    return "D";
+                    
+                } 
+                else if (score>=40) {
+                    return "E";   
+                }
+                 else  {
+                    return "F";
+                    
+                }
+            }
+            const table = document.getElementById('results');
+                for (let key in results) {
+                const course = results[key];
+                const tr = document.createElement('tr');
+
+                for(let item in course){
+                    const td = document.createElement('td');
+                    const txt = document.createTextNode(course[item]);
+                    td.appendChild(txt);
+                    tr.appendChild(td);
+                }
+
+                const totalScore = course.inc + course.mid +  course.exam;
+                const totaltd = document.createElement('td');
+                const totaltxt = document.createTextNode(totalScore);
+
+                totaltd.appendChild(totaltxt);
+                tr.appendChild(totaltd);
+
+
+                const grade=calculateGrade(totalScore);
+                const tdGrade=document.createElement('td');
+                const txtGrade=document.createTextNode(grade);
+
+                tdGrade.appendChild(txtGrade);
+                tr.appendChild(tdGrade);
+
+                table.appendChild(tr);
+
+            }
+                    
+             
+                
+        </script>
+        
+    </body>
+</html>

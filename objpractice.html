@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head><title></title></head>
+
+    <body>
+     <table id="ee" border="1"></table>
+      
+      <p id="demo"></p>
+        <script>
+      const obj={
+        student:{
+          name:'uc',
+          dep:'comp',
+          regno:'2020/sc/122'
+        },
+        course:{
+          csc101 :'intro to comp',
+          code:'csc204',
+          learn:'csc'
+          
+        }
+      
+      }
+      const table=document.getElementById('ee');
+      for(let i in obj){
+        const obp=obj[i];
+        const tr=document.createElement('tr');
+for(let j in obp){
+  const td=document.createElement('td');
+  const txt=document.createTextNode(obp[j]);
+  td.appendChild(txt);
+tr.appendChild(td);
+}
+var ntext="haw are you";
+var tdtxt=document.createElement('td');
+var ntx=document.createTextNode(ntext);
+tdtxt.appendChild(ntx);
+tr.appendChild(ntx)
+
+table.appendChild(tr)
+      }
+
+    
+    
+
+    
+        </script>
+        
+    </body>
+</html>
